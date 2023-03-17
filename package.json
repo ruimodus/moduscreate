@@ -1,0 +1,19 @@
+{
+  "name": "moduscreate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.7.0",
+    "cypress-iframe": "^1.0.1"
+  },
+  "dependencies": {
+    "cypress-mysql": "^1.0.0",
+    "cypress-plugin-api": "^2.10.3"
+  }
+}
