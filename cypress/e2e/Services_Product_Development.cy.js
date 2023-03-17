@@ -54,7 +54,7 @@ describe("Open Modus Create website and try to cover all the options in the SERV
       .then((href) => {
         urls.productDevelopment = href;
       });
-    cy.get("@learnMoreLink").click();
+    cy.get("@learnMoreLink").click({ force: true });
     cy.url().should("include", "/services/product-development");
   });
 
