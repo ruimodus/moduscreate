@@ -1,7 +1,7 @@
 {
   "name": "moduscreate",
   "version": "1.0.0",
-  "description": "",
+  "description": "��#\u0000 \u0000m\u0000o\u0000d\u0000u\u0000s\u0000_\u0000w\u0000e\u0000b\u0000s\u0000i\u0000t\u0000e\u0000_\u0000a\u0000u\u0000t\u0000o\u0000m\u0000a\u0000t\u0000i\u0000o\u0000n\u0000\r\u0000 \u0000",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,12 +9,21 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^12.7.0",
+    "cypress": "^12.8.1",
     "cypress-iframe": "^1.0.1"
   },
   "dependencies": {
     "cypress-mysql": "^1.0.0",
     "cypress-plugin-api": "^2.10.3",
     "cypress-real-events": "^1.7.6"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruimodus/moduscreate.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/ruimodus/moduscreate/issues"
+  },
+  "homepage": "https://github.com/ruimodus/moduscreate#readme"
 }
