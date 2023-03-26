@@ -62,7 +62,7 @@ describe("Open Modus Website, go to SERVICES and go READ CASE STUDY", () => {
   it("PLATFORM MODERNIZATION - Go to the Explore Partnerships page just to assert its working", () => {
     cy.visit(baseUrl + urls.platModernization);
     cy.get('a[href*="https://moduscreate.com/partners/"]')
-      .find.value("Explore Partnerships →")
+      .contains("Explore Partnerships →")
       .as("partners");
     cy.get("@partners").click();
     cy.url().should("include", "/partners");
