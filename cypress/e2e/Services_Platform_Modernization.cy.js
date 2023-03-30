@@ -5,6 +5,7 @@ describe("Open Modus Website, go to SERVICES and go READ CASE STUDY", () => {
     services: "",
     platModernization: "",
     security: "",
+    morePosts: "",
   };
 
   before(() => {
@@ -27,7 +28,6 @@ describe("Open Modus Website, go to SERVICES and go READ CASE STUDY", () => {
     cy.get("@servicesLink").click();
     cy.url().should("include", "/services");
   });
-
   it("SERVICES - After reaching SERVICES, verify some elements and click on READ CASE STUDY on Case Study block", () => {
     cy.visit(urls.services);
     cy.get('a[href*="/services/platform-modernization"]').as(
@@ -66,5 +66,26 @@ describe("Open Modus Website, go to SERVICES and go READ CASE STUDY", () => {
       .as("partners");
     cy.get("@partners").click();
     cy.url().should("include", "/partners");
+  });
+  it("PLATFORM MODERNIZATION - Check the See More Posts button on the bottom of the page and click it", () => {
+    cy.visit(baseUrl + urls.platModernization);
+    cy.get('a[href*="/insights/blog/"][class*="fl-button"]').as("morePosts");
+    cy.get("@morePosts")
+      .invoke("attr", "href")
+      .then((href) => {
+        console.log("href", href);
+        urls.morePosts = href;
+        console.log("morePosts", urls.morePosts);
+      });
+    cy.get("@morePosts").click();
+    cy.url().should("include", "/insights/blog/");
+  });
+
+  it("OUR BLOG - Change category and assert the different values that appear with each different category", () => {
+    cy.visit(baseUrl + urls.morePosts);
+    cy.get("select")
+      .select("agile", { force: true })
+      .invoke("val")
+      .should("eq", "agile");
   });
 });
