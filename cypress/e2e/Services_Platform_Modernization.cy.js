@@ -8,6 +8,12 @@ describe("Open Modus Website, go to SERVICES and go READ CASE STUDY", () => {
     morePosts: "",
   };
 
+  let customerInfo = {
+    firstName: "Zé",
+    lastName: "Ruela",
+    email: "thisisatestemail@gmail.com",
+  };
+
   before(() => {
     Cypress.on("uncaught:exception", (err, runnable) => {
       return false;
@@ -80,12 +86,23 @@ describe("Open Modus Website, go to SERVICES and go READ CASE STUDY", () => {
     cy.get("@morePosts").click();
     cy.url().should("include", "/insights/blog/");
   });
-
   it("OUR BLOG - Change category and assert the different values that appear with each different category", () => {
     cy.visit(baseUrl + urls.morePosts);
     cy.get("select")
       .select("agile", { force: true })
       .invoke("val")
       .should("eq", "agile");
+
+    window.localStorage.setItem(
+      "li_ignored",
+      `[
+        { id: 979239, time: ${Date.now()} },
+      ]`
+    );
+    cy.get('button[class*="facetwp-load-more"]').click();
+    cy.get('input[name*="firstname"]').type(customerInfo.firstName);
+    cy.get('input[name*="lastname"]').type(customerInfo.lastName);
+    cy.get('input[name*="email"]').type(customerInfo.email);
+    cy.get('input[value*="Subscribe"]').click();
   });
 });
