@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Node modules
 node_modules
 
@@ -25,3 +26,9 @@ node_modules
 # yarn.lock
 
 ## Project-specific files
+=======
+cypress/results/*
+cypress/reports/*
+cypress/screenshots/*
+cypress/videos/*
+>>>>>>> e27169a96e83f7e739001e48dc85370ede73f30d
